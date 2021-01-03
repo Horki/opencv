@@ -171,7 +171,7 @@ class Builder:
     def get_build_flags(self):
         flags = ""
         if self.options.build_wasm:
-            flags += "-s WASM=1 "
+            flags += "-s WASM=1 -s WASM_MEM_MAX=512MB -s DEMANGLE_SUPPORT=0 "
         elif self.options.disable_wasm:
             flags += "-s WASM=0 "
         if self.options.threads:
